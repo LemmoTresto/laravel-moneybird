@@ -1,5 +1,5 @@
 <?php
-namespace Casdr\Moneybird;
+namespace LemmoTresto\Moneybird;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
