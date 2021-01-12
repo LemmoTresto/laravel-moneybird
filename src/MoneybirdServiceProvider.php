@@ -19,20 +19,20 @@ class MoneybirdServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/moneybird.php', 'moneybird');
 
-        $this->app->bind('moneybird', function ($app) {
+        $this->app->bind('moneybird', function () {
             $connection = new Connection();
             $connection->setRedirectUrl(config('moneybird.redirect_uri'));
             $connection->setClientId(config('moneybird.client_id'));
             $connection->setClientSecret(config('moneybird.client_secret'));
 
-            if(config('moneybird.authorization_token')) {
-                $connection->setAuthorizationCode(config('moneybird.authorization_token'));
+            if($value = config('moneybird.authorization_token')) {
+                $connection->setAuthorizationCode($value);
             }
-            if(config('moneybird.access_token')) {
-                $connection->setAccessToken(config('moneybird.access_token'));
+            if($value = config('moneybird.access_token')) {
+                $connection->setAccessToken($value);
             }
-            if(config('moneybird.administration_id')) {
-                $connection->setAdministrationId(config('moneybird.administration_id'));
+            if($value = config('moneybird.administration_id')) {
+                $connection->setAdministrationId($value);
             }
 
             $moneybird = new Moneybird($connection);
