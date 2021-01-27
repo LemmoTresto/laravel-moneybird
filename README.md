@@ -39,7 +39,7 @@ Then run the following command to publish the config to your config/ directory.
 $ php artisan vendor:publish --tag=config
 ```
 
-You then need to generate an application in the Moneybird interface and set the configuration in `config/moneybird.php`
+You then need to generate an application in the Moneybird interface and set the configuration in your environment file. See `config/moneybird.php` for all environment variables available.
 
 ## Usage
 
